@@ -1,5 +1,5 @@
 GettingDataProject
-==================
+------------------
 
 This is the course project for Coursera's Getting and Cleaning Data. 
 
@@ -11,9 +11,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 The R script called run_analysis.R does the following:
 
-1. Merges the training and the test sets to create one data set.
-First checks if the user already has the data set downloaded
-If not, creates new folder called "Getting Data Project", downloads zipped dataset and unzips it
+1. Merges the training and the test sets to create one data set. First checks if the user already has the data set downloaded. If not, creates new folder called "Getting Data Project", downloads zipped dataset and unzips it
 
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 

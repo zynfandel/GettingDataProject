@@ -59,15 +59,10 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <p>A full description is available at the site where the data was obtained: <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones</a></p>
 <p>The R script called run_analysis.R does the following:</p>
 <ol style="list-style-type: decimal">
-<li><p>Merges the training and the test sets to create one data set. First checks if the user already has the data set downloaded If not, creates new folder called “Getting Data Project”, downloads zipped dataset and unzips it</p></li>
+<li><p>Merges the training and the test sets to create one data set. First checks if the user already has the data set downloaded. If not, creates new folder called “Getting Data Project”, downloads zipped dataset and unzips it</p></li>
 <li><p>Extracts only the measurements on the mean and standard deviation for each measurement.</p></li>
 <li><p>Uses descriptive activity names to name the activities in the data set.</p></li>
-<li>Appropriately labels the data set with descriptive activity names.</li>
-</ol>
-<ul>
-<li>Replaces abbreviations with fuller descriptions as laid out in features_info.txt</li>
-</ul>
-<ol start="5" style="list-style-type: decimal">
+<li><p>Appropriately labels the data set with descriptive activity names. Replaces abbreviations with fuller descriptions as laid out in features_info.txt</p></li>
 <li><p>Creates a second, independent tidy data set with the average of each variable for each activity and each subject.</p></li>
 <li><p>Writes final data set to txt file in working directory write.table(mergesum, “tidyanalysis.txt”, row.names=FALSE)</p></li>
 </ol>
