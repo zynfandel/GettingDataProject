@@ -12,21 +12,19 @@
 
 
 ## 1. Merge the training and test sets
-## Create new folder called "Getting Data Project" 
-## Download zipped data set into new folder as Dataset.zip
+## Check if UCI HAR Dataset exists 
+## Otherwise create new folder called "Getting Data Project", download zipped dataset and unzip
+## Note files will be automatically extracted into another new folder called UCI HAR Dataset
+## List file names to get an idea of what is in the file
 
 path <- getwd()
-path
-if (!file.exists("GettingDataProject")) {dir.create("GettingDataProject")}
-url <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-zipfile <- "Dataset.zip"
-download.file(url, file.path("GettingDataProject", zipfile))
+if (!file.exists("UCI HAR Dataset")) 
+    {url <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    zipfile <- "Dataset.zip"
+    download.file(url, zipfile)
+    unzip(zipfile, overwrite=TRUE)}
+    input <- file.path("UCI HAR Dataset")
 
-## Unzip files and list their names
-## Note files will be automatically extracted into another new folder called UCI HAR Dataset
-
-unzip("GettingDataProject/Dataset.zip", exdir="GettingDataProject", overwrite=TRUE) 
-input <- file.path("GettingDataProject/UCI HAR Dataset")
 list.files(input, all.files=FALSE, recursive=TRUE)
 
 ## No need to use Inertial Signals folders as explained in course discussion forum
@@ -111,5 +109,5 @@ mergesum <- mergefinal %>%
   group_by(subject, activity) %>%
   summarise_each(funs(mean))
 
-## Write final data set to txt file in GettingDataProject folder
-write.table(mergesum, file.path(path, "GettingDataProject", "tidyanalysis.txt"), row.names=FALSE)
+## Write final data set to txt file in working directory
+write.table(mergesum, "tidyanalysis.txt", row.names=FALSE)
