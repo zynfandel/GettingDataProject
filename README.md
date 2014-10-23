@@ -21,5 +21,4 @@ The R script called run_analysis.R does the following:
 
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-6. Writes final data set to txt file in working directory
-write.table(mergesum, "tidyanalysis.txt", row.names=FALSE)
+6. Writes final data set to txt file in working directory ("tidyanalysis.txt")
